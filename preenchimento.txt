@@ -1,0 +1,105 @@
+# Preenchimento de dados para a tabela Culturas
+# Preenchendo colunas:
+# Preenchendo nome cultura:
+Culturas;Milho;
+# Preenchendo id cultura:
+1;
+# Preenchendo Atrai:
+Aves;
+# Preenchendo Ciclo:
+Verão;
+# Preenchendo Densidade Plantio:
+10000;
+# Preenchendo Proposito Cultivo:
+Alimentação;
+
+# Preenchimento de dados para a tabela Pessoa
+# Preenchendo colunas:
+# Preenchendo id da pessoa:
+Pessoa;1;
+# Preenchendo Nome:
+João da Silva;
+# Preenchendo CPF:
+123.456.789-00;
+# Preenchendo Endereço:
+Rua das Flores, 123;
+# Preenchendo Telefone:
+(11) 98765-4321;
+
+# Preenchimento de dados para a tabela Coleta
+# Preenchendo colunas:
+# Preenchendo id coleta:
+Coleta;1;
+# Preenchendo data da coleta:
+2024-10-01;
+# Preenchendo id cultura:
+1;  # Refere-se ao id da cultura "Milho"
+# Preenchendo id pessoa:
+1;  # Refere-se ao id da pessoa "João da Silva"
+# Preenchendo quantidade coletada:
+500;
+# Preenchendo unidade de medida:
+kg;
+
+# Preenchimento de dados para a tabela Referencia
+# Preenchendo colunas:
+# Preenchendo id referencia:
+Referencia;1;
+# Preenchendo tipo referencia:
+Tipo_A;
+# Preenchendo valor referencia:
+250.00;
+
+# Preenchimento de dados para a tabela Cultivo
+# Preenchendo colunas:
+# Preenchendo id cultivo:
+Cultivo;1;
+# Preenchendo id cultura:
+1;  # Refere-se ao id da cultura "Milho"
+# Preenchendo id referencia:
+1;  # Refere-se ao id da referencia "Tipo_A"
+# Preenchendo data do cultivo:
+2024-09-15;
+# Preenchendo Tamanho:
+2.5;  # Tamanho em hectares
+# Preenchendo Tipo cultivo:
+Permanente;
+
+# Preenchimento de dados para a tabela Insumo
+# Preenchendo colunas:
+# Preenchendo id insumo:
+Insumo;1;
+# Preenchendo nome insumo:
+Fertilizante X;
+# Preenchendo quantidade insumo:
+200;  # Quantidade em kg
+# Preenchendo tipo insumo:
+Químico;
+# Preenchendo id cultura:
+1;  # Refere-se ao id da cultura "Milho"
+
+# Preenchimento de dados para a tabela Praga
+# Preenchendo colunas:
+# Preenchendo id praga:
+Praga;1;
+# Preenchendo nome praga:
+Lagarta do Cartucho;
+# Preenchendo descrição:
+Uma praga que ataca as folhas do milho;
+# Preenchendo id cultura:
+1;  # Refere-se ao id da cultura "Milho"
+# Preenchendo medidas de controle:
+Uso de inseticidas;
+
+# Preenchimento de dados para a tabela Doença
+# Preenchendo colunas:
+# Preenchendo id doença:
+Doença;1;
+# Preenchendo nome doença:
+Ferrugem;
+# Preenchendo descrição:
+Doença fúngica que causa manchas nas folhas;
+# Preenchendo id cultura:
+1;  # Refere-se ao id da cultura "Milho"
+# Preenchendo medidas de controle:
+Uso de fungicidas;
