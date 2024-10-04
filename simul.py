@@ -1,7 +1,5 @@
 #class: Declaração de uma classe, neste caso, chamada AgroflorestaApp, que herda da classe App do Kivy.
 #App: Classe pai, usada para criar uma aplicação.
-
-
 import numpy as np
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
