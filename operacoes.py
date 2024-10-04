@@ -21,7 +21,7 @@ def calcular_taxa_regeneracao(A_n, A):
     return (A_n - A) / A
 
 # Função para simular o sistema de agrofloresta
-def simular_agrofloresta(N, A_p, P, S, A_c, H, A_n):ls 
+def simular_agrofloresta(N, A_p, P, S, A_c, H, A_n): 
     # Área total
     A = calcular_area_total(N, A_p)
     
