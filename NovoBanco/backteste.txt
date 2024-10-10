@@ -1,0 +1,135 @@
+-- MySQL Script for populating AgroFlorestaSIM tables
+-- Fri 04 Oct 2024 09:13:31 AM -03
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Coleta`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Coleta` (`Tipo_Coleta`, `Sistema_idSistema`) VALUES
+(1, 1),
+(2, 1),
+(3, 2);
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Culturas`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Culturas` 
+(`NomeCultura`, `Tipo_Cultivo`, `Atrai`, `PropositoCultivo`, `Tamanho`, `Ciclo`, 
+`PropositoCultivo_idPropositoCultivo`, `TipoCultivo_idTipoCultivo`, `Cultura_Tratamento_idCultura_Tratamento`) VALUES
+('Cultura 1', 1, 'Insetos', 1, 1, 90, 1, 1, 1),
+('Cultura 2', 2, 'Aves', 2, 2, 60, 2, 1, 1);
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Culturas_caracteristicas`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Culturas_caracteristicas` 
+(`Descricao`, `Custo_Semente`, `Pragas`, `Doencas`, `AnomaliaFisiologica`) VALUES
+('Característica 1', 100.00, 'Praga A', 'Doença A', 'Anomalia A'),
+('Característica 2', 150.00, 'Praga B', 'Doença B', 'Anomalia B');
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Culturas_has_Requisitos`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Culturas_has_Requisitos` 
+(`Culturas_idCulturas`, `Requisitos_idRequisitos`, `IDCulturas_Requisitos`) VALUES
+(1, 1, '1-1'),
+(2, 2, '2-1');
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Cultura_Tratamento`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Cultura_Tratamento` 
+(`SoloPreparado`, `Tipos_de_solo`, `DensidadePlantio_Cultura`, `Espacamento_Sulcos`, 
+`controle_daninhas`, `Armazenamento`, `Temperatura`, `Armazenamento_Refrig`, 
+`IrrigacaoNecessaria`, `luminosidade`, `FertilidadeSolo`, `Fertilizantes`, 
+`cultivares e certificadas`) VALUES
+('Solo preparado 1', 'Solo argiloso', 2.00, 30, 'Manual', 'Seco', 25.0, 
+'Frio', 'Necessária', 'Alta', 'Fertilidade alta', 'Fertilizante A', 
+'Variedade A');
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Dados_Sis`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Dados_Sis` 
+(`Area_sistema`, `Densidade_Plantio`, `CoberturaVegetalMedia`, 
+`RendimentoMedioCulturas`, `TxRegeneracaoSistema`, `Sis_Var_idSis_Var`) VALUES
+(1.5, 100.00, 0.70, 3.5, 1.2, 1);
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Passoas_Culturas`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Passoas_Culturas` 
+(`Culturas_idCulturas`, `Pessoa_idPessoa`) VALUES
+(1, 1),
+(2, 2);
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Pessoa`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Pessoa` 
+(`email`, `senha`, `Sistema_idSistema`, `Coleta_idColeta`) VALUES
+('pessoa1@example.com', 'senha1', 1, 1),
+('pessoa2@example.com', 'senha2', 1, 2);
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`PropositoCultivo`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`PropositoCultivo` 
+(`descricao`) VALUES
+('Proposito 1'),
+('Proposito 2');
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`ReferenciaCulturas`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`ReferenciaCulturas` 
+(`Referencias_idReferencias`, `Culturas_has_Requisitos_IDCulturas_Requisitos`, `Observacoes`) VALUES
+(1, '1-1', 'Observação 1'),
+(2, '2-1', 'Observação 2');
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Referencias`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Referencias` 
+(`descricao_referencia`, `Tipo_referencia`) VALUES
+('Referencia 1', 1),
+('Referencia 2', 2);
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Relac_Cultivo`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Relac_Cultivo` 
+(`Tipo`, `Culturas_idPrincipal`, `Culturas_idSecundaria`) VALUES
+(1, 1, 2),
+(2, 2, 1);
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Requisitos`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Requisitos` 
+(`Descricao`, `Tipo`, `Adubacao`, `Requisitoscol`) VALUES
+('Requisito 1', 1, 50, 'R-1'),
+('Requisito 2', 2, 100, 'R-2');
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Sistema`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Sistema` 
+(`Dados_idDados`) VALUES
+(1),
+(2);
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`Sis_Var`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`Sis_Var` 
+(`NumParcelas_Sis`, `NumPlantasParc_Sis`, `Sis_EspacamentoPLantas`, `Sis_Tempo`, `Culturas_idCulturas`) VALUES
+(2.0, 10.0, 0.5, 5, 1),
+(3.0, 12.0, 0.6, 7, 2);
+
+-- -----------------------------------------------------
+-- Populating `AgroFlorestaSIM`.`TipoCultivo`
+-- -----------------------------------------------------
+INSERT INTO `AgroFlorestaSIM`.`TipoCultivo` 
+(`Tipo_Plantio`, `descricao`) VALUES
+(1, 'Plantio manual'),
+(2, 'Plantio mecânico');
